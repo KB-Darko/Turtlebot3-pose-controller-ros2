@@ -148,14 +148,14 @@ class PoseController(Node):
         self.goal_active = True
         self.goal_x = request.x
         self.goal_y = request.y
-        self.goal_theta = request.theta
+        self.goal_theta = math.radians(request.theta)
         self.publish_goal_marker()
         response.success = True
         response.message = "Goal accepted."
         self.get_logger().info(
-            f"New goal: ({self.goal_x:.2f}, "
-            f"{self.goal_y:.2f}, "
-            f"{self.goal_theta:.2f})"
+            f"New goal: ({request.x:.2f}, "
+            f"{request.y:.2f}, "
+            f"{request.theta:.2f})"
         )
         return response
 
