@@ -138,10 +138,27 @@ class PoseController(Node):
                 min(cmd.angular.z, 1.0),
                 -1.0
             )
-        else:
+        else: 
             cmd = Twist()
             self.goal_active = False
-            self.get_logger().info("Goal reached!")
+
+            self.get_logger().info(
+        "========== GOAL REACHED =========="
+        )
+
+            self.get_logger().info(
+                f"Target Pose : "
+                f"x={self.goal_x:.2f} m, "
+                f"y={self.goal_y:.2f} m, "
+                f"θ={math.degrees(self.goal_theta):.1f}°"
+             )
+
+            self.get_logger().info(
+                f"Actual Pose : "
+                f"x={self.x:.2f} m, "
+                f"y={self.y:.2f} m, "
+                f"θ={math.degrees(self.yaw):.1f}°"
+          )
         self.publish_velocity(cmd)
 
     def move_to_pose_callback(self, request, response):
