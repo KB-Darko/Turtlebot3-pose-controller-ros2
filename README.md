@@ -90,8 +90,7 @@ Clone the repository:
 
 ```bash
 
-git clone <repository\_url>
-
+git clone https://github.com/KB-Darko/Turtlebot3-pose-controller-ros2.git
 
 
 cd robot\_ws
