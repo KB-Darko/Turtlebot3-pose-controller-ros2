@@ -127,7 +127,7 @@ Use the custom ROS2 service:
 
 ros2 service call /move\_to\_pose pose\_controller\_interfaces/srv/MoveToPose \\
 
-"{x: 2.0, y: 1.0, theta: 1.57}"
+"{x: 2.0, y: 1.0, theta: 41.57}"
 
 
 
