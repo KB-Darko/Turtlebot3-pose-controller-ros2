@@ -88,10 +88,7 @@ class PoseController(Node):
         cmd.linear.x = self.k_linear * distance_error
         cmd.angular.z = self.k_angular * heading_error
         cmd.linear.x = min(cmd.linear.x, 0.25)
-        cmd.angular.z = max(
-            min(cmd.angular.z, 1.5),
-            -1.5
-        )
+        cmd.angular.z = max(min(cmd.angular.z, 1.5), -1.5 )
         return cmd
     
     def publish_velocity(self, cmd):
